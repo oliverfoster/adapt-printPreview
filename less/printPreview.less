@@ -1,0 +1,64 @@
+@media print {
+	.not-printable {
+		display:none;
+	}
+}
+
+#printPreviewInstructions {
+	width:100%;
+	text-align: center;
+}
+
+.print-preview {
+    .wrapper {  width:100%; margin: 0px auto; position:relative;    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .print-container {
+        width: 75%;
+		margin: auto;
+        img {
+            width: 1654px;
+            max-width:100%;
+            display:block;
+            margin: auto;
+        }
+    }
+
+    @media print {
+        .print { display:none; }
+        .wrapper { margin: 0 auto; }
+    }
+}
+
+.ie9 { //Print Preview: IE9 Screen/Print
+    .print-preview {
+        .print-container {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+:not(.ie9).Explorer.Internet  { //Print Preview: IE10 Screen/Print
+    .print-preview {
+        .print-container {
+            @media screen {
+                img {
+                    width: auto;
+                    heigth: 100%;
+                }
+            }
+            @media print {
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
