@@ -3,6 +3,9 @@ adapt-printPreview
 
 Print preview extension
 
+Notes:  
+Currently opens in a new window, perhaps an overlay would be better?  
+
 Config:
 ```
 // To go in the course.json file
