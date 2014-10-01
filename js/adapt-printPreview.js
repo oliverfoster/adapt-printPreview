@@ -22,7 +22,12 @@ define(function(require) {
 	}))();
 
 	Adapt.on("printPreview:open", function(settings) {
-			var nwindow =  window.open("assets/printPreview.html", printPreview.model.get("loading"));
+			var nwindow;
+			if ($('html').has("ie9")) {
+				nwindow = window.open("assets/printPreview.html");
+			} else {
+				nwindow = window.open("assets/printPreview.html", printPreview.model.get("loading"));
+			}
 			printPreview.model.set("window", nwindow);
 
 			var loaded = false;
